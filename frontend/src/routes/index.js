@@ -70,14 +70,14 @@ export const routes = [
     {
         path: '/sign-in',
         page: SignInPage,
-        isShowHeader: false,
-        isShowFooter: false
+        isShowHeader: true,
+        isShowFooter: true
     },
     {
         path: '/sign-up',
         page: SignUpPage,
-        isShowHeader: false,
-        isShowFooter: false
+        isShowHeader: true,
+        isShowFooter: true
     },
     {
         path: '/product-details/:id',

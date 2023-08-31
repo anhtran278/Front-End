@@ -21,7 +21,9 @@ import {
     SwitchContainer,
     SwitchCircle,
     buttonStyle,
-    buttonHoverStyle
+    SwitchCircle2,
+    buttonHoverStyle,
+    WrapperTextLight,
 } from './style';
 
 const SignUpPage = () => {
@@ -157,14 +159,15 @@ const { data, isLoading, isSuccess, isError } = mutation
               onMouseLeave={handleMouseLeave}
             ></ButtonComponent>
           </Loading>
+          <p>Already have an account ?<WrapperTextLight onClick={handleNavigateSignIn}> Sign In </WrapperTextLight></p>
         </form>
       </Container>
       <Switch style={{backgroundImage: `url(${background4})`}}>
         <SwitchCircle></SwitchCircle>
-        <SwitchCircle className='switch__circle--t'></SwitchCircle>
+        <SwitchCircle2></SwitchCircle2>
         <SwitchContainer>
-          <h2 class="title">Hello Friend !</h2>
-          <p class="description">Enter your personal details and start the journey with us</p>
+          <h2 className="title">Hello Friend !</h2>
+          <p className="description">Enter your personal details and start the journey with us</p>
         </SwitchContainer>
       </Switch>
     </Main>

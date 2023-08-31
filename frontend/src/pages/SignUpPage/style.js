@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+export const WrapperTextLight = styled.span`
+    color: rgb(13, 92, 182);
+    font-size: 13px;
+    cursor: pointer;
+`
+
 export const Main = styled.div`
     position: relative;
     width: 1000px;
@@ -104,7 +110,7 @@ export const Container = styled.div`
     }
 
     .description {
-    font-size: 14px;
+    font-size: 50px;
     letter-spacing: 0.25px;
     text-align: center;
     line-height: 1.6;
@@ -115,7 +121,7 @@ export const buttonStyle = {
     width: '180px',
     height: '50px',
     borderRadius: '25px',
-    marginTop: '50px',
+    margin: '30px 0',
     fontWeight: '700',
     fontSize: '14px',
     letterSpacing: '1.15px',
@@ -160,12 +166,21 @@ export const SwitchCircle = styled.div`
     bottom: -60%;
     left: -60%;
     transition: 1.25s;
-    .switch__circle--t {
+`
+export const SwitchCircle2 = styled.div`
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background-color: #e3e3e33f;
+    bottom: -60%;
+    left: -60%;
+    transition: 1.25s;
+    zIndex: 200;
     top: -30%;
     left: 60%;
     width: 300px;
     height: 300px;
-    }
 `
 
 export const SwitchContainer = styled.div`
@@ -177,4 +192,17 @@ export const SwitchContainer = styled.div`
     width: 400px;
     padding: 50px 55px;
     transition: 1.25s;
+    .title {
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 3;
+    color: #111111;
+    }
+
+    .description {
+    font-size: 15px;
+    letter-spacing: 0.25px;
+    text-align: center;
+    line-height: 1.6;
+    }
 `
