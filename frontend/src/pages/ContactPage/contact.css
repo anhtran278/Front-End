@@ -68,7 +68,7 @@
     padding: 17px 0;
 }
 
-#contact_details .details li i {
+#contact_details .details li .i {
     font-size: 17px;
     padding-right: 20px;
 
@@ -203,8 +203,8 @@
     width: 35%;
 }
 
-#newsletter input {
-    height: 3.5rem;
+#newsletter .form input {
+    height: 6.3rem;
     padding: 1.75rem;
     font-size: 14px;
     width: 100%;
@@ -214,12 +214,12 @@
     border-radius: 5px 0 0 5px;
 }
 
-#newsletter button {
+#newsletter .form button {
     background-color: #088178;
     color: #fff;
     font-size: 15px;
     white-space: nowrap;
-    padding: 0 2rem;
+    padding: 0 4rem;
     border-radius: 0 5px 5px 0;
     border: none;
     cursor: pointer;

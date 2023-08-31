@@ -324,7 +324,7 @@ export const NewsLetter = styled.div`
         width: 35%;
     }
     input{
-        height: 6.5rem;
+        height: 6.3rem;
         padding: 1.75rem;
         font-size: 14px;
         width: 100%;
@@ -338,7 +338,7 @@ export const NewsLetter = styled.div`
         color: #fff;
         font-size: 15px;
         white-space: nowrap;
-        padding: 0 4rem;
+        padding: 0 3rem;
         border-radius: 0 5px 5px 0;
         border: none;
         cursor: pointer;

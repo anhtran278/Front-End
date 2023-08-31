@@ -15,6 +15,7 @@ import SignUpPage from "../pages/SignUpPage/SignUpPage";
 import TypeProductPage from "../pages/TypeProductPage/TypeProductPage";
 import Blog from "../pages/Blog/BlogPage";
 import Contact from "../pages/ContactPage/Contact";
+import About from "../pages/AboutPage/About";
 
 export const routes = [
     {
@@ -111,6 +112,12 @@ export const routes = [
     {
         path: '/contact',
         page: Contact,
+        isShowHeader: true,
+        isShowFooter: true
+    },
+    {
+        path: '/about',
+        page: About,
         isShowHeader: true,
         isShowFooter: true
     },

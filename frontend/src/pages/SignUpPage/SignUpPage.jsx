@@ -1,9 +1,6 @@
 import React from 'react'
 import ButtonComponent from '../../components/ButtonComponent/ButtonComponent'
 import InputForm from '../../components/InputForm/InputForm'
-import { WrapperContainerLeft, WrapperContainerRight, WrapperTextLight } from './style'
-import imageLogo from '../../assets/images/logo-login.png'
-import { Image } from 'antd'
 import { useState } from 'react'
 import { EyeFilled, EyeInvisibleFilled } from '@ant-design/icons'
 import { useNavigate } from 'react-router-dom'
@@ -12,15 +9,39 @@ import { useMutationHooks } from '../../hooks/useMutationHook'
 import Loading from '../../components/LoadingComponent/Loading'
 import * as message from '../../components/Message/Message'
 import { useEffect } from 'react'
+import background3 from '../../assets/images/background3.jpg'
+import background4 from '../../assets/images/background4.jpg'
+import facebookImage from '../../assets/images/facebook (1).png'
+import twitterImage from '../../assets/images/twitter.png'
+import googleImage from '../../assets/images/google.png'
+import {
+    Main,
+    Container,
+    Switch,
+    SwitchContainer,
+    SwitchCircle,
+    buttonStyle,
+    buttonHoverStyle
+} from './style';
 
 const SignUpPage = () => {
   const navigate = useNavigate()
 
   const [isShowPassword, setIsShowPassword] = useState(false)
+  
   const [isShowConfirmPassword, setIsShowConfirmPassword] = useState(false)
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
 
   const handleOnchangeEmail = (value) => {
     setEmail(value)
@@ -30,7 +51,7 @@ const SignUpPage = () => {
     data => UserService.signupUser(data)
   )
 
-  const { data, isLoading, isSuccess, isError } = mutation
+const { data, isLoading, isSuccess, isError } = mutation
 
   useEffect(() => {
     if (isSuccess) {
@@ -58,19 +79,29 @@ const SignUpPage = () => {
   }
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(0, 0, 0, 0.53)', height: '100vh' }}>
-      <div style={{ width: '800px', height: '445px', borderRadius: '6px', background: '#fff', display: 'flex' }}>
-        <WrapperContainerLeft>
-          <h1>Xin chào</h1>
-          <p>Đăng nhập vào tạo tài khoản</p>
-          <InputForm style={{ marginBottom: '10px' }} placeholder="abc@gmail.com" value={email} onChange={handleOnchangeEmail} />
+    <Main style={{backgroundImage: `url(${background3})`}}>
+      <Container >
+        <form className="form" id="b-form" method="" action="">
+          <h2 className="form_title title">Create Account</h2>
+          <div className="form__icons">
+            <img className="form__icon" src={facebookImage} alt="" />
+            <img className="form__icon" src={googleImage} alt="" />
+            <img className="form__icon" src={twitterImage} alt="" />
+          </div>
+          <span class="form__span">or use email for registration</span>
+          <InputForm
+            className="form__input"
+            placeholder="Email"
+            value={email}
+            onChange={handleOnchangeEmail}
+          />
           <div style={{ position: 'relative' }}>
             <span
               onClick={() => setIsShowPassword(!isShowPassword)}
               style={{
                 zIndex: 10,
                 position: 'absolute',
-                top: '4px',
+                top: '20px',
                 right: '8px'
               }}
             >{
@@ -81,8 +112,13 @@ const SignUpPage = () => {
                 )
               }
             </span>
-            <InputForm placeholder="password" style={{ marginBottom: '10px' }} type={isShowPassword ? "text" : "password"}
-              value={password} onChange={handleOnchangePassword} />
+            <InputForm
+              className="form__input"
+              placeholder="Password"
+              type={isShowPassword ? "text" : "password"}
+              value={password}
+              onChange={handleOnchangePassword}
+            />
           </div>
           <div style={{ position: 'relative' }}>
             <span
@@ -90,7 +126,7 @@ const SignUpPage = () => {
               style={{
                 zIndex: 10,
                 position: 'absolute',
-                top: '4px',
+                top: '20px',
                 right: '8px'
               }}
             >{
@@ -101,8 +137,12 @@ const SignUpPage = () => {
                 )
               }
             </span>
-            <InputForm placeholder="comfirm password" type={isShowConfirmPassword ? "text" : "password"}
-              value={confirmPassword} onChange={handleOnchangeConfirmPassword}
+            <InputForm
+              className="form__input"
+              placeholder="Confirm Password"
+              type={isShowConfirmPassword ? "text" : "password"}
+              value={confirmPassword}
+              onChange={handleOnchangeConfirmPassword}
             />
           </div>
           {data?.status === 'ERR' && <span style={{ color: 'red' }}>{data?.message}</span>}
@@ -111,26 +151,23 @@ const SignUpPage = () => {
               disabled={!email.length || !password.length || !confirmPassword.length}
               onClick={handleSignUp}
               size={40}
-              styleButton={{
-                background: 'rgb(255, 57, 69)',
-                height: '48px',
-                width: '100%',
-                border: 'none',
-                borderRadius: '4px',
-                margin: '26px 0 10px'
-              }}
-              textbutton={'Đăng ký'}
-              styleTextButton={{ color: '#fff', fontSize: '15px', fontWeight: '700' }}
+              styleButton={isHovered ? { ...buttonStyle, ...buttonHoverStyle } : buttonStyle}
+              textbutton={'SIGN UP'}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
             ></ButtonComponent>
           </Loading>
-          <p>Bạn đã có tài khoản? <WrapperTextLight onClick={handleNavigateSignIn}> Đăng nhập</WrapperTextLight></p>
-        </WrapperContainerLeft>
-        <WrapperContainerRight>
-          <Image src={imageLogo} preview={false} alt="iamge-logo" height="203px" width="203px" />
-          <h4>Mua sắm tại LTTD</h4>
-        </WrapperContainerRight>
-      </div>
-    </div >
+        </form>
+      </Container>
+      <Switch style={{backgroundImage: `url(${background4})`}}>
+        <SwitchCircle></SwitchCircle>
+        <SwitchCircle className='switch__circle--t'></SwitchCircle>
+        <SwitchContainer>
+          <h2 class="title">Hello Friend !</h2>
+          <p class="description">Enter your personal details and start the journey with us</p>
+        </SwitchContainer>
+      </Switch>
+    </Main>
   )
 }
 

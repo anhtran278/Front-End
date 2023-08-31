@@ -1,10 +1,17 @@
 import React from 'react'
 import './contact.css'
-import '@fortawesome/fontawesome-free/css/all.min.css';
+import {
+EnvironmentOutlined,
+MailOutlined,
+PhoneOutlined,
+ClockCircleOutlined
+} from '@ant-design/icons';
 import backgroundFooter from '../../assets/images/backgound2.jpg';
 import backgroundHeader from '../../assets/images/book_background.jpg';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMap, faEnvelope, faPhone, faClock } from 'font-awesome';
+import people1 from '../../assets/images/people1.jpg';
+import people2 from '../../assets/images/people2.jpg';
+import people3 from '../../assets/images/people3.jpg';
+import people4 from '../../assets/images/people4.jpg';
 
 const ContactPage = () => {
     return (
@@ -22,25 +29,26 @@ const ContactPage = () => {
                 <div>
                     <ul>
                     <li>
-                        <FontAwesomeIcon icon={faMap} />            
+                        <EnvironmentOutlined className='i' />           
                         <p>69/68 D. Dang Thuy Tram, Phuong 13, Binh Thanh, Thanh Pho Ho Chi Minh</p>       
                     </li>
                     <li>
-                        <FontAwesomeIcon icon={faEnvelope} />            
+                        <MailOutlined className='i'/>           
                         <p>contact@example.cpm</p>       
                     </li>
                     <li>
-                        <FontAwesomeIcon icon={faPhone} />                        
+                        <PhoneOutlined className='i'/>                        
                         <p>+84 97 886 7361</p>       
                     </li>
                     <li>
-                        <FontAwesomeIcon icon={faClock} />            
+                        <ClockCircleOutlined className='i'/>            
                         <p>Monday to Saturday: 8:00am to 8:00pm</p>       
                     </li>
                 </ul>
                 </div>
             </div>
             <div className="map">
+            <iframe title='Google Maps' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1496.423964936815!2d106.69950958115241!3d10.827476794341276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528f4a62fce9b%3A0xc99902aa1e26ef02!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBWxINuIExhbmc!5e0!3m2!1svi!2s!4v1693379867129!5m2!1svi!2s" style={{border: '0',borderRadius:'10px',width:"600", height:"450"}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </section>
         <section id="form_details">
@@ -55,22 +63,22 @@ const ContactPage = () => {
             </form>
             <div className="people">
                 <div>
-                    <img src="img/people1.jpg" alt=""/>
+                    <img src={people1} alt=""/>
                     <p><span>Tran Tuan Anh</span> Software Engineer <br/> Phone: + 84 978 867 361
                     <br/>Email: sanatram278@gmail.com</p>
                 </div>
                 <div>
-                    <img src="img/people2.jpg" alt=""/>
+                    <img src={people2} alt=""/>
                     <p><span>Tran Lam Hoang</span> Software Engineer <br/> Phone: + 84 978 867 361
                     <br/>Email: sanatram278@gmail.com</p>
                 </div>
                 <div>
-                    <img src="img/people3.jpg" alt=""/>
+                    <img src={people3} alt=""/>
                     <p><span>Tran Phu Yen</span> Software Engineer <br/> Phone: + 84 978 867 361
                     <br/>Email: sanatram278@gmail.com</p>
                 </div>
                 <div>
-                    <img src="img/people4.jpg" alt=""/>
+                    <img src={people4} alt=""/>
                     <p><span>Nguyen Tan Phu</span> Software Engineer <br/> Phone: + 84 978 867 361
                     <br/>Email: sanatram278@gmail.com</p>
                 </div>
