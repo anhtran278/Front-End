@@ -154,7 +154,7 @@ const ProductDetailsComponent = ({idProduct}) => {
                         <span className='change-address'>Change Address</span>
                     </WrapperAddressProduct>
                     <LikeButtonComponent
-                     dataHref={ process.env.REACT_APP_IS_LOCAL 
+                    dataHref={ process.env.REACT_APP_IS_LOCAL 
                                 ? "https://developers.facebook.com/docs/plugins/" 
                                 : window.location.href
                             } 

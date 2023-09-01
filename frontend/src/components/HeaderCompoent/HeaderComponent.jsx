@@ -24,6 +24,11 @@ import {
   SignIn,
 } from './style';
 import ButttonInputSearch from '../ButtonInputSearch/ButttonInputSearch';
+import HomePage from '../../pages/TrangChu/Trang_chu';
+import Book from '../../pages/HomePage/HomePage';
+import Contact from '../../pages/ContactPage/Contact';
+import About from '../../pages/AboutPage/About';
+import Blog from '../../pages/Blog/BlogPage';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import * as UserService from '../../services/UserService'
@@ -48,6 +53,26 @@ import { Content } from 'antd/lib/layout/layout';
     navigate('/sign-in')
   }
 
+  const HomePage = () => {
+    navigate('/')
+  }
+
+  const Blog = () => {
+    navigate('/blog')
+  }
+
+  const Contact = () => {
+    navigate('/contact')
+  }
+
+  const About = () => {
+    navigate('/about')
+  }
+
+  const Book = () => {
+    navigate('/home')
+  }
+  
   const handleLogout = async () => {
     setLoading(true)
     await UserService.logoutUser()
@@ -141,10 +166,10 @@ import { Content } from 'antd/lib/layout/layout';
         <span></span>
         <HeaderBottomList>
           <HeaderBottomListItem>
-            <HeaderBottomLink href="">HOME</HeaderBottomLink>
+            <HeaderBottomLink onClick={HomePage} href="">HOME</HeaderBottomLink>
           </HeaderBottomListItem>
           <HeaderBottomListItem>
-            <HeaderBottomLink href="">BOOKS</HeaderBottomLink>
+            <HeaderBottomLink onClick={Book} href="">BOOKS</HeaderBottomLink>
           </HeaderBottomListItem>
           <HeaderBottomListItem>
             <HeaderBottomLink href="">ART</HeaderBottomLink>
@@ -153,13 +178,13 @@ import { Content } from 'antd/lib/layout/layout';
             <HeaderBottomLink href="">LIBRARIE HAYDÉE</HeaderBottomLink>
           </HeaderBottomListItem>
           <HeaderBottomListItem>
-            <HeaderBottomLink href="">BLOG</HeaderBottomLink>
+            <HeaderBottomLink onClick={Blog} href="">BLOG</HeaderBottomLink>
           </HeaderBottomListItem>
           <HeaderBottomListItem>
-            <HeaderBottomLink href="">ABOUT</HeaderBottomLink>
+            <HeaderBottomLink onClick={About} href="">ABOUT</HeaderBottomLink>
           </HeaderBottomListItem>
           <HeaderBottomListItem>
-            <HeaderBottomLink href="">CONTACT</HeaderBottomLink>
+            <HeaderBottomLink onClick={Contact} href="">CONTACT</HeaderBottomLink>
           </HeaderBottomListItem>
           <NgonNgu2>
             <select name="" id="">

@@ -3,6 +3,9 @@ import { StyleNameProduct, WrapperCardStyle, WrapperDiscountText, WrapperPriceTe
 import { StarFilled } from '@ant-design/icons'
 import { useNavigate } from 'react-router-dom'
 import { convertPrice } from '../../utils'
+import pro1 from '../../assets/images/1.1.webp'
+import pro2 from '../../assets/images/bookImage/2.1.webp';
+
 
 const CardComponent = (props) => {
     const { countInStock, description, image, name, price, rating, type, discount, selled, id } = props
@@ -13,25 +16,12 @@ const CardComponent = (props) => {
     return (
         <WrapperCardStyle
             hoverable
-            headStyle={{ width: '200px', height: '200px' }}
-            style={{ width: 200 }}
-            bodyStyle={{ padding: '10px' }}
             cover={<img alt="example" src={image} />}
             onClick={() =>  handleDetailsProduct(id)}
         >
-           
             <StyleNameProduct>{name}</StyleNameProduct>
-            <WrapperReportText>
-                <span style={{ marginRight: '4px' }}>
-                    <span>{rating} </span> <StarFilled style={{ fontSize: '12px', color: 'rgb(253, 216, 54)' }} />
-                </span>
-                <WrapperStyleTextSell> | Da ban {selled || 1000}+</WrapperStyleTextSell>
-            </WrapperReportText>
             <WrapperPriceText>
-                <span style={{ marginRight: '8px' }}>{convertPrice(price)}</span>
-                <WrapperDiscountText>
-                    - {discount} %
-                </WrapperDiscountText>
+                <span>{convertPrice(price)}</span>
             </WrapperPriceText>
         </WrapperCardStyle>
     )

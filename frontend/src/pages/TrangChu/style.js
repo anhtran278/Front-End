@@ -208,8 +208,10 @@ export const KhungGiay = styled.div`
 `
 
 export const TuiXach = styled.div`
+    img{
     width: 100%;
     margin-top: -60%;
+    }
 `
 
 export const Quote = styled.div`
@@ -266,7 +268,10 @@ export const Box5 = styled.div`
 `
 
 export const Tree = styled.div`
+    img{
     width: 100%;
+    height: 100%;
+    }
 `
 
 export const Box6 = styled.div`
