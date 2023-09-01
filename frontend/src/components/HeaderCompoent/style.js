@@ -16,7 +16,7 @@ export const HeaderTop = styled.div`
     display: flex;
     justify-content: flex-end;
     border-bottom: #3d4752 1px solid;
-    padding-top: 18px;
+    padding: 10px 0;
 `;
 
 export const HeaderItemsList = styled.ul`
